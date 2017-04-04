@@ -9,20 +9,20 @@ namespace Bicoloring
     /// </summary>
     class BicoloringAnalizer
     {
+
+        private List<Vertex> graph;
+
         public BicoloringAnalizer()
         {
             this.graph = new List<Vertex>();
         }
 
         /// <summary>
-        /// Method that reads input data, creates graph, emulating
-        /// an adjacency list, and fills data.
+        /// Method that reads input data, creates graph, emulating an adjacency list, and fills data.
         /// </summary>
         /// <param name="fileName">Name of input file that holds graph related data</param>
         /// <remarks>
-        /// Graph related data in the input file
-        /// must conform to the conditions listed on the
-        /// "Bicoloring" task webpage.
+        /// Graph related data in the input file must conform to the conditions listed on the "Bicoloring" task webpage.
         /// </remarks>
         public void AnalizeGraphs(string fileName)
         {
@@ -94,7 +94,7 @@ namespace Bicoloring
 
         /// <summary>
         /// Method to test graph bipartiteness.
-        /// We need the graph to be bipartite in order to bicolor it.
+        /// We need a graph to be bipartite in order to bicolor it.
         /// Method uses Breadth-first search algorithm.
         /// </summary>
         /// <param name="n">Number of vertices in graph.</param>
@@ -139,8 +139,6 @@ namespace Bicoloring
 
             return true;
         }
-
-        private List<Vertex> graph;
 
     }
 }

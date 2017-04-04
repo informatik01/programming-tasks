@@ -14,8 +14,7 @@ namespace Bicoloring
     /// Main program.
     /// </summary>
     /// <remarks>
-    /// Sample input file (input.txt) 
-    /// can be found in the "Debug" and "Release" folders.
+    /// Sample input file (input.txt) can be found in the "Debug" and "Release" folders.
     /// </remarks>
     class CheckBipartitiness
     {
