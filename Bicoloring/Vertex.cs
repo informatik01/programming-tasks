@@ -4,29 +4,31 @@ using System.Collections.Generic;
 namespace Bicoloring
 {
     /// <summary>
-    /// Class to represent graph vertex (node).
+    /// This class represents a graph vertex (node).
     /// </summary>
     class Vertex
     {
+
         /// <summary>
-        /// Enumeration of colors to use while doing "Breadth-first search"(BFS).
-        /// Because we color vertices using just two colors,
-        /// it is convinient to use for one color "0", and
-        /// for another color "-1". That way we can toggle
-        /// current color (using bitwise compliment operation) while doing BFS and coloring vertices.
+        /// <para>Enumeration of colors to use while doing "Breadth-first search"(BFS).</para>
+        /// Because we color vertices using just two colors, it is convinient to use for one color "0", and for another color "-1".
+        /// That way we can toggle current color (using bitwise compliment operation) while doing BFS and coloring vertices.
+        /// </summary>
         /// </summary>
         /// <remarks>
         /// "0 == ~(-1)" and "-1 == ~ 0", if appropriate type is used.
         /// That is why signed byte is chosen.
         /// </remarks>
-        public enum Colors : sbyte {BLUE = -1, GREEN, NONE};
+        public enum Colors : sbyte { BLUE = -1, GREEN, NONE };
+
+        private List<int> adjacentVertices;     // every vertex contains list of its adjacent verteces' labels
 
         public Vertex(int number)
         {
-            this.Label = number;
-            this.Visited = false;
-            this.Color = Colors.NONE;
-            this.adjacentVertices = new List<int>();
+            Label = number;
+            Visited = false;
+            Color = Colors.NONE;
+            adjacentVertices = new List<int>();
         }
 
         public int Label { get; private set; }  // vertex label (not used in this program, but just in case)
@@ -65,6 +67,5 @@ namespace Bicoloring
             }
         }
 
-        private List<int> adjacentVertices;     // every vertex contains list of its adjacent verteces' labels
     }
 }
